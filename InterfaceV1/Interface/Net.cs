@@ -14,7 +14,7 @@ namespace Interface
         int inputs;
         int outputs;
         int hiddens;
-        //int propagationPeriod ;
+        int propagationPeriod ;
         public Net(int input, int hidden, int output)
         {
             for (int i = 0; i < input+hidden+output; i++)
@@ -22,7 +22,7 @@ namespace Interface
             this.inputs = input;
             this.hiddens = hidden;
             this.outputs = output;
-            //this.propagationPeriod = 5;
+            this.propagationPeriod = 5;
         }
 
         public void doConnections(int option)
@@ -43,7 +43,7 @@ namespace Interface
             string res = "";
 
             
-            //for (int j = 0; j < this.propagationPeriod; j++)
+            for (int j = 0; j < this.propagationPeriod; j++)
             {
                 for (int i = 0; i < inputs; i++)
                     ((Nod)nodes[i]).input+= pat[i];
